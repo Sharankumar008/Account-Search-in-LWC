@@ -1,0 +1,17 @@
+<!-- accountSearchLWC.html -->
+<template>
+    <lightning-card title="Account Search">
+        <div class="slds-p-around_medium">
+            <lightning-input label="Account Name" type="text" value={accountName} onchange={handleAccountNameChange}></lightning-input>
+            <lightning-button label="Search" variant="brand" onclick={handleSearch}></lightning-button>
+        </div>
+        <template if:true={accountRecords}>
+            <lightning-datatable
+                key-field="Id"
+                data={accountRecords}
+                columns={columns}
+                hide-checkbox-column="true">
+            </lightning-datatable>
+        </template>
+    </lightning-card>
+</template>
